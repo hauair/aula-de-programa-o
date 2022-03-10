@@ -9,7 +9,7 @@ export default function App() {
 <Button
   
   title="Resultado"
-  color="#black"
+  color="#ff0000"
   accessibilityLabel="Learn more about this purple button"
 />
       </View>
