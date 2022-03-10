@@ -1,19 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Thiago do Amaral Castro Rodrigues</Text>
       <StatusBar style="auto" />
-    </View>
+<Button
+  
+  title="Resultado"
+  color="#black"
+  accessibilityLabel="Learn more about this purple button"
+/>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#black',
     alignItems: 'center',
     justifyContent: 'center',
   },
