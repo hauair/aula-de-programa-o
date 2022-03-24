@@ -18,7 +18,7 @@ export default function App() {
 <Button
   
   title="Calcular"
-  color="#ff0000"
+  color="#6b5b95"
   accessibilityLabel="Learn more about this purple button"
 />
       </View>
