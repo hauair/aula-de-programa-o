@@ -1,29 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Dimensions } from 'react-native';
-
-const width = Dimensions.get('window').width
-const height = Dimensions.get('window').height
+import React from 'react'
+import {useState} from 'react'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-          <Text>Thiago do Amaral Castro Rodrigues</Text>
-          <Text>Resultado</Text>
-          <Text>Digite o valor 1</Text>
-          <Text>Digite o valor 2</Text>
-          <Text>Selecione a operação</Text>
-      <StatusBar style="auto" />
-<Button
+  const [darkMode, setdarkMode] = useState(false)
   
-  title="Calcular"
-  color="#6b5b95"
-  accessibilityLabel="Learn more about this purple button"
-/>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  return (
+    <View>
+    <View style={styles.results}>
+     <TouchableOpacity style={styles.themeButton}></TouchableOpacity>
       </View>
+      <View style={styles.buttons}>
+      
+      </View>
+          
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -32,9 +41,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-header: {
-  width: width,
-  height: 350,
-}
+  results:{
+    backgroundColor: darkMode ? "#282f3b" : "f5f5f5",
+    width: '100%',
+    minHeight: 300,
+
+  }
 
 });
