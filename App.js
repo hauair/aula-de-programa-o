@@ -9,7 +9,7 @@ import { Entypo } from '@expo/vector-icons';
 
 export default function App() {
   const [darkMode, setdarkMode] = useState(false)
-  const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', 0, '.', '+/-', '=']
+  const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', '+/-', 0, '.', '=']
   
   const styles = StyleSheet.create({
     container: {
