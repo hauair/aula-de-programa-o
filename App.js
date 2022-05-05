@@ -51,7 +51,11 @@ export default function App() {
        <Text style={styles.resultText}>2 + 2 = 5</Text>
      </View>
      <View style={styles.buttons}>
-      
+       {buttons.map((button) => 
+
+       
+       
+       )}
       </View>
      </View>
           
