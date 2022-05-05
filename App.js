@@ -46,8 +46,11 @@ export default function App() {
    },
   button:{
     borderColor: darkMode ? '#3f4d5b' : "#e5e5e5",
+    alignItems: 'center',
+    justifyContent: 'center',
     minWidth: 90,
-    minHeight: 90, 
+    minHeight: 90,
+    flex: 3, 
    },
   });
   
@@ -57,7 +60,7 @@ export default function App() {
        <TouchableOpacity style={styles.themeButton}>
          <Entypo name={darkMode ? "light-up" : 'moon'} size={24} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setdarkMode(false) : setdarkMode(true)} />
        </TouchableOpacity>
-       <Text style={styles.resultText}>2 + 2 = 5</Text>
+       <Text style={styles.resultText}>0</Text>
      </View>
      <View style={styles.buttons}>
        {buttons.map((button) => 
