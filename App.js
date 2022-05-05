@@ -10,6 +10,7 @@ import { Entypo } from '@expo/vector-icons';
 export default function App() {
   const [darkMode, setdarkMode] = useState(false)
   const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', 0, '.', '+/-', '=']
+  
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -23,23 +24,31 @@ export default function App() {
       minHeight: 280,
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
- },
- resultText: {
-   margin: 10,
-   fontSize: 25
- },
- themeButton: {
-   alignSelf: 'flex-start', 
-   bottom: 120,
-   margin: 15,
-   backgroundColor: darkMode ? "#7b8084" :"#e5e5e5",
-   alignItems: 'center',
-   justifyContent: 'center', 
-   width: 50,
-   height: 50, 
-   borderRadius: 25, 
- }
-
+   },
+   resultText: {
+    margin: 10,
+    fontSize: 25,
+   },
+    themeButton: {
+    alignSelf: 'flex-start', 
+    bottom: 120,
+    margin: 15,
+    backgroundColor: darkMode ? "#7b8084" :"#e5e5e5",
+    alignItems: 'center',
+    justifyContent: 'center', 
+    width: 50,
+    height: 50, 
+    borderRadius: 25, 
+   },
+  buttons:{
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+   },
+  button:{
+    borderColor: darkMode ? '#3f4d5b' : "#e5e5e5",
+    minWidth: 90,
+    minHeight: 90, 
+   },
   });
   
   return (
@@ -52,10 +61,15 @@ export default function App() {
      </View>
      <View style={styles.buttons}>
        {buttons.map((button) => 
-
-       
-       
-       )}
+         button === '=' ?
+         <TouchableOpacity key={button} style={styles.button}>
+           <text>{button}</text>
+        </TouchableOpacity> 
+         :
+         <TouchableOpacity key={button} style={styles.button}>
+           <text>{button}</text>
+         </TouchableOpacity> 
+        )}
       </View>
      </View>
           
