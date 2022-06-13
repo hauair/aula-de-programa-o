@@ -53,6 +53,10 @@ export default function App() {
     minHeight: 90,
     flex: 3, 
    },
+   textButton: {
+    color: darkMode ? "#b5b7bb" : "#7c7c7c",
+    fontSize: 20,
+   }
   });
   
   return (
@@ -67,7 +71,7 @@ export default function App() {
        {buttons.map((button) => 
          button === '=' ?
          <TouchableOpacity key={button} style={[styles.button, {backgroundColor: '#9DB7CB'} ]}>
-           <text>{button}</text>
+           <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
         </TouchableOpacity> 
          :
          <TouchableOpacity key={button} style={[styles.button, {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed'} ]}>
