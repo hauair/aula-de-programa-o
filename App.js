@@ -12,12 +12,15 @@ export default function App() {
   const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', '+/-', 0, '.', '=']
 
   const [currentNumber, setCurrentNumber] = useState("")
+  const [lastNumber, setLastNumber] = useState("")
 
   function handleInput(buttonPressed){
     console.log(buttonPressed)
     if(buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "*" | buttonPressed === "/"){
-
+      setCurrentNumber(currentNumber + " " + buttonPressed + " ")
+      return
     }
+    return
   }
   
   const styles = StyleSheet.create({
@@ -76,8 +79,8 @@ export default function App() {
        <TouchableOpacity style={styles.themeButton}>
          <Entypo name={darkMode ? "light-up" : 'moon'} size={24} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setdarkMode(false) : setdarkMode(true)} />
        </TouchableOpacity>
-       <Text style={styles.historyText}>2 + 2 =</Text>
-       <Text style={styles.resultText}>4</Text>
+       <Text style={styles.historyText}>{lastNumber}</Text>
+       <Text style={styles.resultText}>{currentNumber}</Text>
      </View>
      <View style={styles.buttons}>
        {buttons.map((button) => 
