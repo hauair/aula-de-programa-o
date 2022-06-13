@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react'
 import {useState} from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons'; 
 
 
@@ -46,6 +46,7 @@ export default function App() {
    },
   button:{
     borderColor: darkMode ? '#3f4d5b' : "#e5e5e5",
+    borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
     minWidth: 90,
