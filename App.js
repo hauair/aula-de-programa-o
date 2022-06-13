@@ -10,6 +10,15 @@ import { Entypo } from '@expo/vector-icons';
 export default function App() {
   const [darkMode, setdarkMode] = useState(false)
   const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', '+/-', 0, '.', '=']
+
+  const [currentNumber, setCurrentNumber] = useState("")
+
+  function handleInput(buttonPressed){
+    console.log(buttonPressed)
+    if(buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "*" | buttonPressed === "/"){
+
+    }
+  }
   
   const styles = StyleSheet.create({
     results:{
@@ -22,12 +31,19 @@ export default function App() {
    resultText: {
     color: darkMode ? "#f5f5f5" : '#283F38',
     margin: 10,
-    fontSize: 25,
+    fontSize: 40,
    },
-    themeButton: {
+   
+   historyText: {
+    color: darkMode ? "#B5B7BB" : "#7c7c7c",
+    fontSize: 20,
+    marginRight: 10,
+    alignSelf: 'flex-end',
+   },
+   themeButton: {
     alignSelf: 'flex-start', 
     bottom: 120,
-    margin: 15,
+    margin: 10,
     backgroundColor: darkMode ? "#7b8084" :"#e5e5e5",
     alignItems: 'center',
     justifyContent: 'center', 
@@ -60,16 +76,17 @@ export default function App() {
        <TouchableOpacity style={styles.themeButton}>
          <Entypo name={darkMode ? "light-up" : 'moon'} size={24} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setdarkMode(false) : setdarkMode(true)} />
        </TouchableOpacity>
-       <Text style={styles.resultText}>0</Text>
+       <Text style={styles.historyText}>2 + 2 =</Text>
+       <Text style={styles.resultText}>4</Text>
      </View>
      <View style={styles.buttons}>
        {buttons.map((button) => 
          button === '=' ?
-         <TouchableOpacity key={button} style={[styles.button, {backgroundColor: '#9DB7CB'} ]}>
+         <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#9DB7CB'} ]}>
            <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
         </TouchableOpacity> 
          :
-         <TouchableOpacity key={button} style={[styles.button, 
+         <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, 
          {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed'} ]}>
            <Text style={styles.textButton}>{button}</Text>
          </TouchableOpacity> 
