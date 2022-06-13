@@ -12,12 +12,6 @@ export default function App() {
   const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', '+/-', 0, '.', '=']
   
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     results:{
       backgroundColor: darkMode ? "#282f3b" : "#f5f5f5",
       width: '100%',
@@ -26,6 +20,7 @@ export default function App() {
       justifyContent: 'flex-end',
    },
    resultText: {
+    color: darkMode ? "#f5f5f5" : '#283F38',
     margin: 10,
     fontSize: 25,
    },
@@ -74,8 +69,9 @@ export default function App() {
            <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
         </TouchableOpacity> 
          :
-         <TouchableOpacity key={button} style={[styles.button, {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed'} ]}>
-           <text>{button}</text>
+         <TouchableOpacity key={button} style={[styles.button, 
+         {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed'} ]}>
+           <Text style={styles.textButton}>{button}</Text>
          </TouchableOpacity> 
         )}
       </View>
