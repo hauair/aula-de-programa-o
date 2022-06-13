@@ -66,11 +66,11 @@ export default function App() {
      <View style={styles.buttons}>
        {buttons.map((button) => 
          button === '=' ?
-         <TouchableOpacity key={button} style={styles.button}>
+         <TouchableOpacity key={button} style={[styles.button, {backgroundColor: '#9DB7CB'} ]}>
            <text>{button}</text>
         </TouchableOpacity> 
          :
-         <TouchableOpacity key={button} style={styles.button}>
+         <TouchableOpacity key={button} style={[styles.button, {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff' : darkMode === true ? '#414853' : '#ededed'} ]}>
            <text>{button}</text>
          </TouchableOpacity> 
         )}
