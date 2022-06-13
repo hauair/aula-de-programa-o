@@ -6,13 +6,34 @@ import { Entypo } from '@expo/vector-icons';
 
 
 
-
 export default function App() {
   const [darkMode, setdarkMode] = useState(false)
   const buttons = ['C', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', '+/-', 0, '.', '=']
 
   const [currentNumber, setCurrentNumber] = useState("")
   const [lastNumber, setLastNumber] = useState("")
+
+  function calculator(){
+    const splitNumbers = currentNumber.split(' ')
+    const fistNumber = parseFloat(splitNumbers[0])
+    const lastNumber = parseFloat(splitNumbers[2])
+    const operator = splitNumbers[1]
+
+    switch(operator){
+      case '+':
+        setCurrentNumber((fistNumber + lastNumber).toString())
+        return
+      case '-':
+        setCurrentNumber((fistNumber - lastNumber).toString())
+        return
+      case '*':
+        setCurrentNumber((fistNumber * lastNumber).toString())
+        return
+      case '/':
+        setCurrentNumber((fistNumber / lastNumber).toString())
+        return      
+    }
+  }
 
   function handleInput(buttonPressed){
     console.log(buttonPressed)
@@ -35,7 +56,7 @@ export default function App() {
       case '+/-':
         return
     }
-    
+
     setCurrentNumber(currentNumber + buttonPressed)
   }
   
