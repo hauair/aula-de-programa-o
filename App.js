@@ -20,7 +20,23 @@ export default function App() {
       setCurrentNumber(currentNumber + " " + buttonPressed + " ")
       return
     }
-    return
+    switch(buttonPressed){
+      case 'DEL':
+        setCurrentNumber(currentNumber.substring(0, (currentNumber.length -1)))
+        return
+      case 'C':
+        setLastNumber("")
+        setCurrentNumber("")
+        return
+      case '=':
+        setLastNumber(currentNumber + "=")
+        calculator()
+        return  
+      case '+/-':
+        return
+    }
+    
+    setCurrentNumber(currentNumber + buttonPressed)
   }
   
   const styles = StyleSheet.create({
